@@ -3,6 +3,7 @@ from email.mime import image
 from django.conf import settings
 from django.db import models
 from django.contrib.auth.models import AbstractUser
+from phonenumber_field.modelfields import PhoneNumberField
 
 #User class
 class User(AbstractUser):
@@ -15,6 +16,7 @@ class User(AbstractUser):
     grade = models.CharField(max_length=40)
     image = models.ImageField(null=True, blank=True, upload_to = "account")
     team_no = models.ForeignKey('party.Team', on_delete=models.CASCADE, db_column='team_no', null=True, blank=True)
+    phone_number = PhoneNumberField(unique = True, null = False, blank = False)
 
     def __str__(self):
         return f"{self.username} - {self.nickname}"
