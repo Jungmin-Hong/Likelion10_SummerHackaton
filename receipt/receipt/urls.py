@@ -14,6 +14,7 @@ urlpatterns = [
     path('board/detail', board_views.board_detail, name='board_detail'), #임시
     path('mypage', account_views.mypage, name='mypage'),
     path('signup', account_views.signup, name='signup'),
+    path('login', account_views.login, name='login'),
 ]
 
 if settings.DEBUG:

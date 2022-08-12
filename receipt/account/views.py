@@ -12,6 +12,9 @@ def mypage(request):
 def signup(request):
     return render(request, 'signup_09.html')
 
+def login(request):
+    return render(request, 'login_14.html')
+
 # 회원가입 (유효성 검사x)
 def signup(request):
     if request.method == 'POST':
@@ -53,9 +56,9 @@ def login(request):
             auth.login(request, user)
             return redirect('home')
         else:
-            return render(request, 'login.html', {'error': 'YOUR Email or Password is incorrect.'})
+            return render(request, 'login_14.html', {'error': 'YOUR Email or Password is incorrect.'})
     else:
-        return render(request, 'login.html')
+        return render(request, 'login_14.html')
         
 
 # 로그아웃
